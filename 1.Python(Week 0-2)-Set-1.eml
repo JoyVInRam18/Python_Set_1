@@ -1,0 +1,961 @@
+Delivered-To: joyvinramola18@gmail.com
+Received: by 2002:a05:6130:608e:b0:87d:e411:ca46 with SMTP id im14csp1429067uab;
+        Sun, 25 May 2025 11:36:05 -0700 (PDT)
+X-Received: by 2002:a05:6830:6993:b0:72b:7faa:93b0 with SMTP id 46e09a7af769-7355cfe5e8dmr4183774a34.1.1748198165553;
+        Sun, 25 May 2025 11:36:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1748198165; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LkJwup0Ir0WYnZbPtt4MPfvhRnmJL1OVCLNXrQBUjbnRuVPrYrT1CdrJhsDhmd0hYL
+         SLy4TYBG51u8NzM5pmKpLHWYyzgso/Lhw8R6zMLNXtY2U46VEcgyeVodQggg2QWWqv60
+         H+A5exLywVPbkTay9Tt7GoMbqgCfVWSAxtV+BzyKbNkDQmEEW5x5SY0U9bUtoWFJ6FuS
+         2J69StWZooEsbB03nFahaKxhUK0EJCt0hVRIMH3GeQTj9ZlptPNne6NLRaUJtk4is728
+         qVVpipFjqmnxJ0V3FBXPNn69hls2BvBImMjWhLXUN02IiJ38xqTmG3eQDva3g1MiCZ0B
+         w+Bw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:from:subject:date:message-id:feedback-id:mime-version
+         :dkim-signature;
+        bh=MB+JiBuef0SVcl023mTsXktPZn0gmtCM1uxKlg4jLEU=;
+        fh=a3uEX/THZED4aHYyA9uvgmWk1dM0Wu6FafWWMpVvWOI=;
+        b=Fmt5Oe/1nGVwK1Eo717KXX6T7IvGZi5PQ7MhTS8gJGY4b925wC2WjRBw9muyrMjhjI
+         Ku6AiN7V8HTvqxTpFrQfluXc2eBxYH8BbwE5Uce246mEVErNBqsfHpeZuD4ykMRFIWG1
+         GSGnL5wlSIubDkoHukMGOX2yGvq5d42HbOu9Xpj1t6c1J/cFCqcTw1n/03oDqFzk+Oln
+         FV3viXjBI6U2ZAadmEiy2tSkr1W2T/2GUFji6iSM8z6TAR5C2OOwMKWqAa5Ayc4wsjgE
+         X7sX2VLlN/wJkd9kbyZ9+JsCB/lyAxdwJCDTbqEa2nd9lBUja27rwy3v3u0J/icBJq8F
+         +f4A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=QSCgB9y9;
+       spf=pass (google.com: domain of 3fwmzabykapaxgjek-jwuwahlk-fgjwhdqyggydw.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3FWMzaBYKAPAXgjek-jWUWahlk-fgjWhdqYggYdW.Uge@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <3FWMzaBYKAPAXgjek-jWUWahlk-fgjWhdqYggYdW.Uge@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 46e09a7af769-7357aa2f698sor313474a34.14.2025.05.25.11.36.05
+        for <joyvinramola18@gmail.com>
+        (Google Transport Security);
+        Sun, 25 May 2025 11:36:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3fwmzabykapaxgjek-jwuwahlk-fgjwhdqyggydw.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=QSCgB9y9;
+       spf=pass (google.com: domain of 3fwmzabykapaxgjek-jwuwahlk-fgjwhdqyggydw.uge@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3FWMzaBYKAPAXgjek-jWUWahlk-fgjWhdqYggYdW.Uge@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1748198165; x=1748802965; dara=google.com;
+        h=to:from:subject:date:message-id:feedback-id:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=MB+JiBuef0SVcl023mTsXktPZn0gmtCM1uxKlg4jLEU=;
+        b=QSCgB9y9ErpQ5p1ct0h+PYyxExR+r0cKHA1mw1S32Y0VBEf57yvni4kGDKPd6xAJAJ
+         Gg/j5sy3BAFLDqyHZz8FUkB78fNyO3v9ZEW5gplrZ4kjSislCrQX6cBmWoeX13NXxRjF
+         Y8yG9kP2h4EUwfCaFEaKIB3hn3Fl9YdEAIwgHcEgEZjCuhh8yICK7ye6mY/r2FHyZTRW
+         gvcJcct7s2chztjJoW4A3sZdMtEPGAvnoAajMXAeHinY1lDFjJ4dcE1w3XYO/RTfEz3D
+         OLki4w1pSndXkbPbLlWbwuHH2bUxWumE3dIbOXEAABtoz0/BijO9RqANOoegDplGwrgB
+         r7pw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1748198165; x=1748802965;
+        h=to:from:subject:date:message-id:feedback-id:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=MB+JiBuef0SVcl023mTsXktPZn0gmtCM1uxKlg4jLEU=;
+        b=u6wU5RB+TDjGFb8hnPZBvHcGmf5p5pcqVj+sZ/7lyGNreMFyL2DW9HcoWjucHTX6v+
+         qJqTMvb80DlCe2w0rzQJN1yFlDlfcI0UkAJ3Sbvi07b9MLTSEuaTtNsb1cFSZNW42MbK
+         jyGXwzhhTMaavGZieyA4reR4CBSXXuoLycAfxep8EJoc8bZFJsE8A0RwfJK9sY31LWxG
+         SOaAIFFF5EnCW6j2Bkq3XdkHK738/cykjZo1JIa6kcRJxFidRrVRcfRkBa76Mb2N6jqF
+         /S2T3HF0+YqHWCs6yg5EnppS3MrmhNhIaYFqsCHCMTwe0jr6V23rwi5sNWxP8sgj6zL8
+         FYRg==
+X-Gm-Message-State: AOJu0YxNvKHUQqj2SD/LDUGjORpO2jmskrZ46QQF2x2vaUmVT0oNucsZ
+	anWGZLe0qsSHsEO/nFg7GTnMQbkew/HA1efNM8ToVMee8ykIKIdckaWOT4MmhhlnfXUbhoygF1R
+	31pa9wGzoPxK5exFWZEU2SC96lN+cWAeij1CgQcY=
+X-Google-Smtp-Source: AGHT+IGH8hO4pm/f3YolQps8qI5z1ru10RlG7J4iISMs7zuh01kqHXf9kchPlBWYfpCx3JxuddiQy1VohQ1z77a0aziExQ==
+MIME-Version: 1.0
+X-Received: by 2002:a05:6830:3c05:b0:72b:9b8e:434b with SMTP id
+ 46e09a7af769-7355d1b0484mr4681554a34.22.1748198165128; Sun, 25 May 2025
+ 11:36:05 -0700 (PDT)
+Feedback-ID: MailTypeResponseReceipt:GoogleForms
+X-GoogleForms-FormId: e/1FAIpQLScIGGwwjmzhg2L60vtftgoKVcYa6DMjtBoeZI0VW8UzPagSZw
+X-GoogleForms-CustomerDisplayName: Hope Artificial Intelligence Training Institute
+Message-ID: <autogen-java-673bc270-d268-44df-861a-880380bbedae@google.com>
+Date: Sun, 25 May 2025 18:36:05 +0000
+Subject: 1.Python(Week 0-2)-Set-1
+From: Google Forms <forms-receipts-noreply@google.com>
+To: joyvinramola18@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000a136d20635fa1a4c"
+
+--000000000000a136d20635fa1a4c
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Google Forms
+
+
+Thanks for filling out 1.Python(Week 0-2)-Set-1
+Here's what was received.
+
+View score
+
+
+1.Python(Week 0-2)-Set-1
+
+
+Email *
+
+
+joyvinramola18@gmail.com
+
+
+What is the purpose of a programming language? *
+
+
+a) To make coffee
+
+
+b) To communicate with computers
+
+
+c) To paint pictures
+
+
+d) To browse the internet
+
+
+Which of the following is a Python variable naming convention? *
+
+
+a) Variable names can start with a number
+
+
+b) Variable names can contain spaces
+
+
+c) Variable names are case-sensitive
+
+
+d) Variable names cannot include underscores
+
+
+What does the print() function do in Python?
+*
+
+
+a) Saves a file
+
+
+b) Displays output to the screen
+
+
+c) Takes user input
+
+
+d) Terminates the program
+
+
+What is the correct syntax to take user input in Python?
+*
+
+
+a) input("Enter your name:")
+
+
+b) scan("Enter your name:")
+
+
+c) read("Enter your name:")
+
+
+d) get("Enter your name:")
+
+
+Which of the following is used for loops in Python? *
+
+
+a) for
+
+
+b) while
+
+
+c) Both a and b
+
+
+d) None of the above
+
+
+What symbol is used to indicate a comment in Python?
+*
+
+
+a) //
+
+
+b) /* */
+
+
+c) #
+
+
+d) --
+
+
+Which data type is used to store a sequence of characters in Python? *
+
+
+a) int
+
+
+b) float
+
+
+c) string
+
+
+d) boolean
+
+
+What keyword is used to define a function in Python? *
+
+
+a) define
+
+
+b) func
+
+
+c) def
+
+
+d) function
+
+
+What will len([1, 2, 3, 4]) return?
+*
+
+
+a) 3
+
+
+b) 4
+
+
+c) 5
+
+
+d) Error
+
+
+How do you create an infinite loop in Python?
+*
+
+
+a) while True:
+
+
+b) for i in range(1000000):
+
+
+c) while (i < 10):
+
+
+d) loop forever:
+
+
+What will be the output of print(3 * "abc")? *
+
+
+a) abcabcabc
+
+
+b) abc*3
+
+
+c) abc abc abc
+
+
+d) Error
+
+
+Which of the following statements about Python lists is true? *
+
+
+a) Lists are immutable
+
+
+b) Lists can store different data types
+
+
+c) Lists must have unique elements
+
+
+d) Lists cannot be modified once created
+
+
+What will bool([]) return? *
+
+
+a) True
+
+
+b) False
+
+
+c) None
+
+
+d) Error
+
+
+How do you correctly open a file named data.txt for writing in Python? *
+
+
+a) open("data.txt", "r")
+
+
+b) open("data.txt", "w")
+
+
+c) open("data.txt", "a")
+
+
+d) open("data.txt", "x")
+
+
+What does list(range(3)) return?
+
+*
+
+
+a) [0, 1, 2]
+
+
+b) [1, 2, 3]
+
+
+c) [0, 1, 2, 3]
+
+
+d) range(3)
+
+
+Create your own Google Form
+
+Does this form look suspicious? Report
+
+
+
+--000000000000a136d20635fa1a4c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"ngJKDWBXjQyZCRl7B1EmnA">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"ngJKDWBXjQyZCRl7B1EmnA">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(103,58,183);" width=3D"100%" role=3D"presentation"><tbody><tr heigh=
+t=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_white_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(237,231,246);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 20px; fon=
+t-weight: 400; line-height: 28px;margin: 0 0 12px;">Thanks for filling out =
+<a href=3D"https://docs.google.com/forms/d/e/1FAIpQLScIGGwwjmzhg2L60vtftgoK=
+VcYa6DMjtBoeZI0VW8UzPagSZw/viewform?usp=3Dmail_form_link" target=3D"_blank"=
+ style=3D"white-space: pre-wrap;">1.Python(Week 0-2)-Set-1</a></h1>Here's w=
+hat was received.<div style=3D"margin-top: 16px;"><div style=3D"margin-top:=
+ 24px"><a href=3D"https://docs.google.com/forms/u/0/d/e/1FAIpQLScIGGwwjmzhg=
+2L60vtftgoKVcYa6DMjtBoeZI0VW8UzPagSZw/viewscore?viewscore=3DAE0zAgBxVq61Msi=
+XuGiqDdA5izrZ5qJJPde7ExshZLeWCrEJpPtKaDeu1v6L1cM1Ac1-pOQ" target=3D"_blank"=
+ style=3D"border-radius: 4px;font-family: &#39;Google Sans&#39;,Roboto,Helv=
+etica,Arial,sans-serif;font-size: 14px; font-weight: 500; padding: 8px 24px=
+; text-align: center; text-decoration: none;background-color: rgb(103,58,18=
+3); color: #fff;">View score</a></div><div itemprop=3D"action" itemscope it=
+emtype=3D"http://schema.org/ViewAction"><meta itemprop=3D"url" content=3D"h=
+ttps://docs.google.com/forms/u/0/d/e/1FAIpQLScIGGwwjmzhg2L60vtftgoKVcYa6DMj=
+tBoeZI0VW8UzPagSZw/viewscore?viewscore=3DAE0zAgBxVq61MsiXuGiqDdA5izrZ5qJJPd=
+e7ExshZLeWCrEJpPtKaDeu1v6L1cM1Ac1-pOQ"><meta itemprop=3D"name" content=3D"V=
+iew your score"></div></div></div><div style=3D"border-bottom: 1px solid #d=
+adce0; border-left: 1px solid #dadce0; border-right: 1px solid #dadce0; bor=
+der-top: 8px solid rgb(103,58,183); padding: 20px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;"><h1 dir=3D"ltr" style=3D"font-fami=
+ly: Roboto,Helvetica,Arial,sans-serif;font-size: 32px; font-weight: 400; li=
+ne-height: 42px;white-space: pre-wrap;margin: 0 0 12px;">1.Python(Week 0-2)=
+-Set-1</h1><div style=3D"white-space: pre-wrap;margin-bottom: 12px;"></div>=
+</div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;backgroun=
+d-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;=
+"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;=
+font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight=
+: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Email<spa=
+n style=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2>=
+</div><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=
+=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0=
+,0,0.38);margin: 12px 0 8px; min-height: 20px;display: inline-block; max-wi=
+dth: 100%; min-width: 50%;">joyvinramola18@gmail.com</div></div></div></div=
+><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-col=
+or: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><di=
+v style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-=
+family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400=
+; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">What is the pu=
+rpose of a programming language?<span style=3D"color: #d93025;" aria-label=
+=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 12px;">=
+<div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family=
+: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line=
+-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td=
+><div role=3D"radio" aria-checked=3D"false" aria-label=3D"a) To make coffee=
+" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-rad=
+ius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-=
+break: break-word;">a) To make coffee</td></tr></table></div><div style=3D"=
+margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helve=
+tica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;=
+margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-che=
+cked=3D"true" aria-label=3D"b) To communicate with computers" style=3D"bord=
+er: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div=
+ style=3D"background-color: #5f6368; border: solid 5px #5f6368; border-radi=
+us: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"m=
+in-width: 8px;"></td><td style=3D"word-break: break-word;">b) To communicat=
+e with computers</td></tr></table></div><div style=3D"margin-top: 16px;"><t=
+able style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin=
+-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"c) To paint pictures" style=3D"border: solid 2px #=
+9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td styl=
+e=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">c) To pain=
+t pictures</td></tr></table></div><div style=3D"margin-top: 16px;"><table s=
+tyle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-=
+size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: =
+8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"fals=
+e" aria-label=3D"d) To browse the internet" style=3D"border: solid 2px #9aa=
+0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td style=
+=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">d) To brows=
+e the internet</td></tr></table></div></div></div><div style=3D"border: 1px=
+ solid #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8=
+px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px=
+;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,A=
+rial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-=
+space: pre-wrap;margin: 0 0 16px;"><span>Which of the following is a Python=
+ variable naming convention?</span><span style=3D"color: #d93025;" aria-lab=
+el=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 12px;=
+"><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-fami=
+ly: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; li=
+ne-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><=
+td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"a) Variable nam=
+es can start with a number" style=3D"border: solid 2px #9aa0a6; height: 16p=
+x; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px=
+;"></td><td style=3D"word-break: break-word;">a) Variable names can start w=
+ith a number</td></tr></table></div><div style=3D"margin-top: 16px;"><table=
+ style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;fon=
+t-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top=
+: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"fa=
+lse" aria-label=3D"b) Variable names can contain spaces" style=3D"border: s=
+olid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></t=
+d><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">=
+b) Variable names can contain spaces</td></tr></table></div><div style=3D"m=
+argin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;m=
+argin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-chec=
+ked=3D"true" aria-label=3D"c) Variable names are case-sensitive" style=3D"b=
+order: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><=
+div style=3D"background-color: #5f6368; border: solid 5px #5f6368; border-r=
+adius: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=
+=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">c) Variable=
+ names are case-sensitive</td></tr></table></div><div style=3D"margin-top: =
+16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,s=
+ans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #7075=
+7a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-=
+checked=3D"false" aria-label=3D"d) Variable names cannot include underscore=
+s" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-ra=
+dius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word=
+-break: break-word;">d) Variable names cannot include underscores</td></tr>=
+</table></div></div></div><div style=3D"border: 1px solid #dadce0; padding:=
+ 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;=
+margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: =
+0 0 16px;"><span dir=3D"ltr"><p dir=3D"ltr"><span>What does the </span><spa=
+n>print()</span><span> function do in Python?</span></p></span><span style=
+=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2></div><=
+div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><table styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px=
+; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" =
+aria-label=3D"a) Saves a file" style=3D"border: solid 2px #9aa0a6; height: =
+16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: =
+8px;"></td><td style=3D"word-break: break-word;">a) Saves a file</td></tr><=
+/table></div><div style=3D"margin-top: 16px;"><table style=3D"color: #20212=
+4;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weig=
+ht: 400; line-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><=
+div role=3D"radio" aria-checked=3D"true" aria-label=3D"b) Displays output t=
+o the screen" style=3D"border: solid 2px #5f6368; height: 16px; width: 16px=
+; border-radius: 50%;"><div style=3D"background-color: #5f6368; border: sol=
+id 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; width: 0;"></di=
+v></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: br=
+eak-word;">b) Displays output to the screen</td></tr></table></div><div sty=
+le=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto=
+,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height:=
+ 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div ro=
+le=3D"radio" aria-checked=3D"false" aria-label=3D"c) Takes user input" styl=
+e=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 5=
+0%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break:=
+ break-word;">c) Takes user input</td></tr></table></div><div style=3D"marg=
+in-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica=
+,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;colo=
+r: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radi=
+o" aria-checked=3D"false" aria-label=3D"d) Terminates the program" style=3D=
+"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"=
+></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: bre=
+ak-word;">d) Terminates the program</td></tr></table></div></div></div><div=
+ style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #=
+fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div sty=
+le=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-famil=
+y: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; lin=
+e-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><span dir=3D"ltr"><=
+p dir=3D"ltr"><span>What is the correct syntax to take user input in Python=
+?</span></p></span><span style=3D"color: #d93025;" aria-label=3D"Required q=
+uestion"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"=
+margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helve=
+tica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;=
+margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-che=
+cked=3D"true" aria-label=3D"a) input(&quot;Enter your name:&quot;)" style=
+=3D"border: solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50=
+%;"><div style=3D"background-color: #5f6368; border: solid 5px #5f6368; bor=
+der-radius: 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td st=
+yle=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">a) input=
+(&quot;Enter your name:&quot;)</td></tr></table></div><div style=3D"margin-=
+top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: =
+#70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" =
+aria-checked=3D"false" aria-label=3D"b) scan(&quot;Enter your name:&quot;)"=
+ style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radi=
+us: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-b=
+reak: break-word;">b) scan(&quot;Enter your name:&quot;)</td></tr></table><=
+/div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-f=
+amily: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400;=
+ line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><t=
+r><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"c) read(&quo=
+t;Enter your name:&quot;)" style=3D"border: solid 2px #9aa0a6; height: 16px=
+; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;=
+"></td><td style=3D"word-break: break-word;">c) read(&quot;Enter your name:=
+&quot;)</td></tr></table></div><div style=3D"margin-top: 16px;"><table styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px=
+; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" =
+aria-label=3D"d) get(&quot;Enter your name:&quot;)" style=3D"border: solid =
+2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td=
+ style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">d) ge=
+t(&quot;Enter your name:&quot;)</td></tr></table></div></div></div><div sty=
+le=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff;=
+ border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-=
+height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><span>Which of the fo=
+llowing is used for loops in Python?</span><span style=3D"color: #d93025;" =
+aria-label=3D"Required question"> *</span></h2></div><div style=3D"padding:=
+ 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;f=
+ont-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight:=
+ 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed=
+;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"a) for"=
+ style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radi=
+us: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-b=
+reak: break-word;">a) for</td></tr></table></div><div style=3D"margin-top: =
+16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,s=
+ans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #7075=
+7a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-=
+checked=3D"false" aria-label=3D"b) while" style=3D"border: solid 2px #9aa0a=
+6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"=
+min-width: 8px;"></td><td style=3D"word-break: break-word;">b) while</td></=
+tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"color: #2=
+02124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-=
+weight: 400; line-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><=
+td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"c) Both a and b"=
+ style=3D"border: solid 2px #5f6368; height: 16px; width: 16px; border-radi=
+us: 50%;"><div style=3D"background-color: #5f6368; border: solid 5px #5f636=
+8; border-radius: 50%; margin: 3px; height: 0; width: 0;"></div></div></td>=
+<td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">c)=
+ Both a and b</td></tr></table></div><div style=3D"margin-top: 16px;"><tabl=
+e style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;fo=
+nt-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-to=
+p: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"f=
+alse" aria-label=3D"d) None of the above" style=3D"border: solid 2px #9aa0a=
+6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"=
+min-width: 8px;"></td><td style=3D"word-break: break-word;">d) None of the =
+above</td></tr></table></div></div></div><div style=3D"border: 1px solid #d=
+adce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margi=
+n-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 di=
+r=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans=
+-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pr=
+e-wrap;margin: 0 0 16px;"><span dir=3D"ltr"><p dir=3D"ltr"><span>What symbo=
+l is used to indicate a comment in Python?</span></p></span><span style=3D"=
+color: #d93025;" aria-label=3D"Required question"> *</span></h2></div><div =
+style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D=
+"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+4px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; ta=
+ble-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria=
+-label=3D"a) //" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 1=
+6px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td=
+ style=3D"word-break: break-word;">a) //</td></tr></table></div><div style=
+=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,H=
+elvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 2=
+0px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=
+=3D"radio" aria-checked=3D"false" aria-label=3D"b) /* */" style=3D"border: =
+solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></=
+td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;"=
+>b) /* */</td></tr></table></div><div style=3D"margin-top: 16px;"><table st=
+yle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-s=
+ize: 14px; font-weight: 400; line-height: 20px;margin-top: 8px; table-layou=
+t: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"=
+c) #" style=3D"border: solid 2px #5f6368; height: 16px; width: 16px; border=
+-radius: 50%;"><div style=3D"background-color: #5f6368; border: solid 5px #=
+5f6368; border-radius: 50%; margin: 3px; height: 0; width: 0;"></div></div>=
+</td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word=
+;">c) #</td></tr></table></div><div style=3D"margin-top: 16px;"><table styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px=
+; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" =
+aria-label=3D"d) --" style=3D"border: solid 2px #9aa0a6; height: 16px; widt=
+h: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td=
+><td style=3D"word-break: break-word;">d) --</td></tr></table></div></div><=
+/div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background=
+-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"=
+><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;f=
+ont-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight:=
+ 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><span>Whic=
+h data type is used to store a sequence of characters in Python?</span><spa=
+n style=3D"color: #d93025;" aria-label=3D"Required question"> *</span></h2>=
+</div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><tab=
+le style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;f=
+ont-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-t=
+op: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"=
+false" aria-label=3D"a) int" style=3D"border: solid 2px #9aa0a6; height: 16=
+px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8p=
+x;"></td><td style=3D"word-break: break-word;">a) int</td></tr></table></di=
+v><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-fami=
+ly: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; li=
+ne-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><=
+td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"b) float" style=
+=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50=
+%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: =
+break-word;">b) float</td></tr></table></div><div style=3D"margin-top: 16px=
+;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-=
+serif;font-size: 14px; font-weight: 400; line-height: 20px;margin-top: 8px;=
+ table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" ar=
+ia-label=3D"c) string" style=3D"border: solid 2px #5f6368; height: 16px; wi=
+dth: 16px; border-radius: 50%;"><div style=3D"background-color: #5f6368; bo=
+rder: solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; width:=
+ 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-=
+break: break-word;">c) string</td></tr></table></div><div style=3D"margin-t=
+op: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Ari=
+al,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #=
+70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" a=
+ria-checked=3D"false" aria-label=3D"d) boolean" style=3D"border: solid 2px =
+#9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td sty=
+le=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">d) boolea=
+n</td></tr></table></div></div></div><div style=3D"border: 1px solid #dadce=
+0; padding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bo=
+ttom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D=
+"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-ser=
+if;font-size: 16px; font-weight: 400; line-height: 24px;white-space: pre-wr=
+ap;margin: 0 0 16px;"><span>What keyword is used to define a function in Py=
+thon?</span><span style=3D"color: #d93025;" aria-label=3D"Required question=
+"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"margin-=
+top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Ar=
+ial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: =
+#70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" =
+aria-checked=3D"false" aria-label=3D"a) define" style=3D"border: solid 2px =
+#9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td><td sty=
+le=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">a) define=
+</td></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"co=
+lor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px=
+; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table=
+-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-la=
+bel=3D"b) func" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16=
+px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td =
+style=3D"word-break: break-word;">b) func</td></tr></table></div><div style=
+=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,H=
+elvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 2=
+0px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria=
+-checked=3D"true" aria-label=3D"c) def" style=3D"border: solid 2px #5f6368;=
+ height: 16px; width: 16px; border-radius: 50%;"><div style=3D"background-c=
+olor: #5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; =
+height: 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><=
+td style=3D"word-break: break-word;">c) def</td></tr></table></div><div sty=
+le=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto=
+,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height:=
+ 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div ro=
+le=3D"radio" aria-checked=3D"false" aria-label=3D"d) function" style=3D"bor=
+der: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></d=
+iv></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-w=
+ord;">d) function</td></tr></table></div></div></div><div style=3D"border: =
+1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-radius=
+: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 1=
+2px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetic=
+a,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;whi=
+te-space: pre-wrap;margin: 0 0 16px;"><span dir=3D"ltr"><p dir=3D"ltr"><spa=
+n>What will </span><span>len([1, 2, 3, 4])</span><span> return?</span></p><=
+/span><span style=3D"color: #d93025;" aria-label=3D"Required question"> *</=
+span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 1=
+6px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sa=
+ns-serif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757=
+a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-c=
+hecked=3D"false" aria-label=3D"a) 3" style=3D"border: solid 2px #9aa0a6; he=
+ight: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-w=
+idth: 8px;"></td><td style=3D"word-break: break-word;">a) 3</td></tr></tabl=
+e></div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;fon=
+t-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 4=
+00; line-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div r=
+ole=3D"radio" aria-checked=3D"true" aria-label=3D"b) 4" style=3D"border: so=
+lid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=
+=3D"background-color: #5f6368; border: solid 5px #5f6368; border-radius: 50=
+%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-wid=
+th: 8px;"></td><td style=3D"word-break: break-word;">b) 4</td></tr></table>=
+</div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-=
+family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400=
+; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><=
+tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"c) 5" style=
+=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50=
+%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: =
+break-word;">c) 5</td></tr></table></div><div style=3D"margin-top: 16px;"><=
+table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-seri=
+f;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margi=
+n-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"d) Error" style=3D"border: solid 2px #9aa0a6; heig=
+ht: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-wid=
+th: 8px;"></td><td style=3D"word-break: break-word;">d) Error</td></tr></ta=
+ble></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20p=
+x 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;marg=
+in-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D=
+"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+6px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 =
+16px;"><span dir=3D"ltr"><p dir=3D"ltr"><span>How do you create an infinite=
+ loop in Python?</span></p></span><span style=3D"color: #d93025;" aria-labe=
+l=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 12px;"=
+><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-famil=
+y: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; lin=
+e-height: 20px;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"=
+radio" aria-checked=3D"true" aria-label=3D"a) while True:" style=3D"border:=
+ solid 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div st=
+yle=3D"background-color: #5f6368; border: solid 5px #5f6368; border-radius:=
+ 50%; margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-=
+width: 8px;"></td><td style=3D"word-break: break-word;">a) while True:</td>=
+</tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"color: =
+#202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; fon=
+t-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layo=
+ut: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=
+=3D"b) for i in range(1000000):" style=3D"border: solid 2px #9aa0a6; height=
+: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width=
+: 8px;"></td><td style=3D"word-break: break-word;">b) for i in range(100000=
+0):</td></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D=
+"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+4px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; ta=
+ble-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria=
+-label=3D"c) while (i &lt; 10):" style=3D"border: solid 2px #9aa0a6; height=
+: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width=
+: 8px;"></td><td style=3D"word-break: break-word;">c) while (i &lt; 10):</t=
+d></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"color=
+: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; f=
+ont-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-la=
+yout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=
+=3D"d) loop forever:" style=3D"border: solid 2px #9aa0a6; height: 16px; wid=
+th: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></t=
+d><td style=3D"word-break: break-word;">d) loop forever:</td></tr></table><=
+/div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12p=
+x;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bo=
+ttom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"colo=
+r: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; =
+font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;=
+"><span>What will be the output of </span><span>print(3 * "abc")</span><spa=
+n>?</span><span style=3D"color: #d93025;" aria-label=3D"Required question">=
+ *</span></h2></div><div style=3D"padding: 0 12px;"><div style=3D"margin-to=
+p: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Aria=
+l,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;margin-to=
+p: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"t=
+rue" aria-label=3D"a) abcabcabc" style=3D"border: solid 2px #5f6368; height=
+: 16px; width: 16px; border-radius: 50%;"><div style=3D"background-color: #=
+5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; height:=
+ 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td styl=
+e=3D"word-break: break-word;">a) abcabcabc</td></tr></table></div><div styl=
+e=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,=
+Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: =
+20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div rol=
+e=3D"radio" aria-checked=3D"false" aria-label=3D"b) abc*3" style=3D"border:=
+ solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div><=
+/td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;=
+">b) abc*3</td></tr></table></div><div style=3D"margin-top: 16px;"><table s=
+tyle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-=
+size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: =
+8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"fals=
+e" aria-label=3D"c) abc abc abc" style=3D"border: solid 2px #9aa0a6; height=
+: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width=
+: 8px;"></td><td style=3D"word-break: break-word;">c) abc abc abc</td></tr>=
+</table></div><div style=3D"margin-top: 16px;"><table style=3D"color: #2021=
+24;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-wei=
+ght: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: f=
+ixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"d) =
+Error" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; borde=
+r-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"=
+word-break: break-word;">d) Error</td></tr></table></div></div></div><div s=
+tyle=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #ff=
+f; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=
+=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family:=
+ Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-=
+height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><span>Which of the fo=
+llowing statements about Python lists is true?</span><span style=3D"color: =
+#d93025;" aria-label=3D"Required question"> *</span></h2></div><div style=
+=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D"colo=
+r: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; =
+font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-l=
+ayout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-labe=
+l=3D"a) Lists are immutable" style=3D"border: solid 2px #9aa0a6; height: 16=
+px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8p=
+x;"></td><td style=3D"word-break: break-word;">a) Lists are immutable</td><=
+/tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"color: #=
+202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font=
+-weight: 400; line-height: 20px;margin-top: 8px; table-layout: fixed;"><tr>=
+<td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"b) Lists can st=
+ore different data types" style=3D"border: solid 2px #5f6368; height: 16px;=
+ width: 16px; border-radius: 50%;"><div style=3D"background-color: #5f6368;=
+ border: solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; wid=
+th: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"wo=
+rd-break: break-word;">b) Lists can store different data types</td></tr></t=
+able></div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;=
+font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight=
+: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixe=
+d;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"c) Lis=
+ts must have unique elements" style=3D"border: solid 2px #9aa0a6; height: 1=
+6px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8=
+px;"></td><td style=3D"word-break: break-word;">c) Lists must have unique e=
+lements</td></tr></table></div><div style=3D"margin-top: 16px;"><table styl=
+e=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-siz=
+e: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px=
+; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" =
+aria-label=3D"d) Lists cannot be modified once created" style=3D"border: so=
+lid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td=
+><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">d=
+) Lists cannot be modified once created</td></tr></table></div></div></div>=
+<div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-colo=
+r: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div=
+ style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-f=
+amily: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400;=
+ line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><span>What will=
+ </span><span>bool([])</span><span> return?</span><span style=3D"color: #d9=
+3025;" aria-label=3D"Required question"> *</span></h2></div><div style=3D"p=
+adding: 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D"color: #2=
+02124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-=
+weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout=
+: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"=
+a) True" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; bor=
+der-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=
+=3D"word-break: break-word;">a) True</td></tr></table></div><div style=3D"m=
+argin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;m=
+argin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-chec=
+ked=3D"true" aria-label=3D"b) False" style=3D"border: solid 2px #5f6368; he=
+ight: 16px; width: 16px; border-radius: 50%;"><div style=3D"background-colo=
+r: #5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: 3px; hei=
+ght: 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td =
+style=3D"word-break: break-word;">b) False</td></tr></table></div><div styl=
+e=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,=
+Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: =
+20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div rol=
+e=3D"radio" aria-checked=3D"false" aria-label=3D"c) None" style=3D"border: =
+solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></=
+td><td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;"=
+>c) None</td></tr></table></div><div style=3D"margin-top: 16px;"><table sty=
+le=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-si=
+ze: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8p=
+x; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false"=
+ aria-label=3D"d) Error" style=3D"border: solid 2px #9aa0a6; height: 16px; =
+width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;">=
+</td><td style=3D"word-break: break-word;">d) Error</td></tr></table></div>=
+</div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;bac=
+kground-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom:=
+ 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #2=
+02124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-=
+weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;"><sp=
+an>How do you correctly open a file named </span><span>data.txt</span><span=
+> for writing in Python?</span><span style=3D"color: #d93025;" aria-label=
+=3D"Required question"> *</span></h2></div><div style=3D"padding: 0 12px;">=
+<div style=3D"margin-top: 16px;"><table style=3D"color: #202124;font-family=
+: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line=
+-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td=
+><div role=3D"radio" aria-checked=3D"false" aria-label=3D"a) open(&quot;dat=
+a.txt&quot;, &quot;r&quot;)" style=3D"border: solid 2px #9aa0a6; height: 16=
+px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8p=
+x;"></td><td style=3D"word-break: break-word;">a) open(&quot;data.txt&quot;=
+, &quot;r&quot;)</td></tr></table></div><div style=3D"margin-top: 16px;"><t=
+able style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;margin-top: 8px; tabl=
+e-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-la=
+bel=3D"b) open(&quot;data.txt&quot;, &quot;w&quot;)" style=3D"border: solid=
+ 2px #5f6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D=
+"background-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; =
+margin: 3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width:=
+ 8px;"></td><td style=3D"word-break: break-word;">b) open(&quot;data.txt&qu=
+ot;, &quot;w&quot;)</td></tr></table></div><div style=3D"margin-top: 16px;"=
+><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-se=
+rif;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;mar=
+gin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checke=
+d=3D"false" aria-label=3D"c) open(&quot;data.txt&quot;, &quot;a&quot;)" sty=
+le=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; border-radius: =
+50%;"></div></td><td style=3D"min-width: 8px;"></td><td style=3D"word-break=
+: break-word;">c) open(&quot;data.txt&quot;, &quot;a&quot;)</td></tr></tabl=
+e></div><div style=3D"margin-top: 16px;"><table style=3D"color: #202124;fon=
+t-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 4=
+00; line-height: 20px;color: #70757a;margin-top: 8px; table-layout: fixed;"=
+><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"d) open(&=
+quot;data.txt&quot;, &quot;x&quot;)" style=3D"border: solid 2px #9aa0a6; he=
+ight: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-w=
+idth: 8px;"></td><td style=3D"word-break: break-word;">d) open(&quot;data.t=
+xt&quot;, &quot;x&quot;)</td></tr></table></div></div></div><div style=3D"b=
+order: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border=
+-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"paddi=
+ng: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,H=
+elvetica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 2=
+4px;white-space: pre-wrap;margin: 0 0 16px;"><p dir=3D"ltr"><span>What does=
+ </span><span>list(range(3))</span><span> return?</span><span><br></span></=
+p><span style=3D"color: #d93025;" aria-label=3D"Required question"> *</span=
+></h2></div><div style=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;=
+"><table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-s=
+erif;font-size: 14px; font-weight: 400; line-height: 20px;margin-top: 8px; =
+table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"true" ari=
+a-label=3D"a) [0, 1, 2]" style=3D"border: solid 2px #5f6368; height: 16px; =
+width: 16px; border-radius: 50%;"><div style=3D"background-color: #5f6368; =
+border: solid 5px #5f6368; border-radius: 50%; margin: 3px; height: 0; widt=
+h: 0;"></div></div></td><td style=3D"min-width: 8px;"></td><td style=3D"wor=
+d-break: break-word;">a) [0, 1, 2]</td></tr></table></div><div style=3D"mar=
+gin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helvetic=
+a,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;col=
+or: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"rad=
+io" aria-checked=3D"false" aria-label=3D"b) [1, 2, 3]" style=3D"border: sol=
+id 2px #9aa0a6; height: 16px; width: 16px; border-radius: 50%;"></div></td>=
+<td style=3D"min-width: 8px;"></td><td style=3D"word-break: break-word;">b)=
+ [1, 2, 3]</td></tr></table></div><div style=3D"margin-top: 16px;"><table s=
+tyle=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-=
+size: 14px; font-weight: 400; line-height: 20px;color: #70757a;margin-top: =
+8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"fals=
+e" aria-label=3D"c) [0, 1, 2, 3]" style=3D"border: solid 2px #9aa0a6; heigh=
+t: 16px; width: 16px; border-radius: 50%;"></div></td><td style=3D"min-widt=
+h: 8px;"></td><td style=3D"word-break: break-word;">c) [0, 1, 2, 3]</td></t=
+r></table></div><div style=3D"margin-top: 16px;"><table style=3D"color: #20=
+2124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px; font-w=
+eight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table-layout:=
+ fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-label=3D"d=
+) range(3)" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px; =
+border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td styl=
+e=3D"word-break: break-word;">d) range(3)</td></tr></table></div></div></di=
+v></div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"max-width: 672px; min-width: 154px; border-collapse: separate; border-s=
+pacing: 0 0.2em;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D=
+"24px"><td></td></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=
+=3Dmail_form_link" style=3D"color: #424242; font-size: 13px;">Create your o=
+wn Google Form</a></td></tr><tr><td>Does this form look suspicious? <a href=
+=3D"//drive.google.com/u/0/abuse?id=3DAKkXjowTVrDXMR_AZSv4VfrGqyVWG7J4uW7CB=
+hwrEtzV6Q2qf_X7Ydc6WQcxSj4a43Upic8YzKq7HbJZ9f-YlWM:0&amp;docurl=3Dhttps://d=
+ocs.google.com/forms/u/0/d/e/1FAIpQLScIGGwwjmzhg2L60vtftgoKVcYa6DMjtBoeZI0V=
+W8UzPagSZw/formResponse&amp;usp=3Dmail_receipt_abuse" target=3D"_blank" sty=
+le=3D"color: #424242; font-size: 13px;">Report</a></td></tr></tbody></table=
+></div></body></html>
+--000000000000a136d20635fa1a4c--
